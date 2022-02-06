@@ -1,38 +1,103 @@
-.App {
+h1 {
+  padding-left: 400px !important;
+}
+
+.main {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  padding: 90, 0, 90, 0;
+  background-color: white;
+  height: 700px;
+}
+.sub-main {
+  display: flex;
+  margin-top: 30px;
+  margin-left: -100px;
+  justify-content: center;
+  height: 350px;
+  width: 35%;
+  box-shadow: 5px rgb(87, 83, 83);
+  padding-top: 50px;
+  border-radius: 20px;
+  background-color: rgb(172, 156, 156);
+}
+.list {
+  margin-left: 300px;
+  margin-top: 60px;
+  height: 250px;
+  width: 15%;
+  display: flex;
+  padding-top: 50px;
+  box-shadow: 5px rgb(87, 83, 83);
+  border-radius: 20px;
+  background-color: rgb(158, 139, 139);
+}
+h2 {
+  padding-left: 80px;
+}
+.items {
+  width: 125%;
+  padding-left: 30px;
+  overflow-y: scroll;
+  /* overflow-x: scroll; */
+}
+
+.toggle-dark {
+  background-color: rgb(50, 50, 50);
+}
+.toggle-normal {
+  background-color: rgb(250, 250, 250);
+}
+.dark-mode,
+.normal-mode {
+  margin: 3px;
+  padding: 3px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 60px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dark-mode {
+  background-color: rgb(50, 50, 50);
+  color: rgb(250, 250, 250);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.normal-mode {
+  background-color: rgb(250, 250, 250);
+  color: rgb(50, 50, 50);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.toggle-dark,
+.toggle-normal {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 3px;
+  border-radius: 4px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
-
-.App-link {
-  color: #61dafb;
+.dark-main {
+  background-color: rgb(50, 50, 50);
+  color: rgb(250, 250, 250);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#name {
+  height: 30px;
+  border-radius: 8px;
+  width: 250px;
+}
+#email {
+  margin-top: 10px;
+  height: 30px;
+  border-radius: 8px;
+  width: 250px;
+}
+button {
+  margin-top: 10px;
+  height: 30px;
+  width: 80px;
+  border-radius: 8px;
+}
+label {
+  margin-right: 10px;
+  font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
