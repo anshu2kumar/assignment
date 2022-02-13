@@ -101,3 +101,61 @@ label {
   font-size: large;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.nextPage {
+  font-size: larger;
+  font-weight: 400px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-left: 1400px;
+  display: flex;
+  position: absolute;
+  padding-bottom: 200px;
+  margin-bottom: 100px;
+}
+.Getbutton {
+  width: 300px !important;
+  margin-top: 30px !important;
+  margin-left: 30px !important;
+}
+
+.pagination {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  cursor: pointer;
+  margin-top: 100px;
+  margin-left: 300px;
+}
+
+.pagination a {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #6c7ac9;
+  color: #6c7ac9;
+}
+
+.pagination__link {
+  font-weight: bold;
+}
+
+.pagination__link--active a {
+  color: #fff;
+  background: #6c7ac9;
+}
+
+.pagination__link--disabled a {
+  color: rgb(198, 197, 202);
+  border: 1px solid rgb(198, 197, 202);
+}
+
+.App {
+  margin-top: 50px;
+  font-family: sans-serif;
+  text-align: center;
+  /* overflow-y: scroll; */
+  /* overflow-x: scroll; */
+}
+
+img {
+  height: 100px;
+}

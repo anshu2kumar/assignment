@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../App.css'
+import '../App.css';
+import {Link } from 'react-router-dom';
 const Main = () => {
   const [name,setName] = useState(""); 
   const[email,setEmail] = useState(""); 
@@ -56,7 +57,12 @@ const Main = () => {
     <h4 className="normal-mode" onClick={() => toggle("normal")}>Normal</h4>
     <h4 className="dark-mode" onClick={() => toggle("dark")}>Dark</h4>
   </div>
+  <div className='nextPage'>
+  <Link to='/photos'>Go to Photo Page 
+  </Link>
 </div>
+</div>
+
 </>);
 };
 
