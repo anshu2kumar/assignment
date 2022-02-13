@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
 import '../App.css';
 import {Link } from 'react-router-dom';
+
+export interface credentialProvider {
+  name:string;
+  email:string;
+}
 const Main = () => {
   const [name,setName] = useState(""); 
   const[email,setEmail] = useState(""); 
-  const[credentials,setCredentials] = useState([]); 
+  const[credentials,setCredentials] = useState<credentialProvider[]>([]); 
   const[isDark,setStatus] = useState(false);
-  const handleSave = (e) => {
+
+  const handleSave = (e:any) => {
     e.preventDefault(); 
-    const credential = {name :name,email:email};
+    const credential:any = {name :name,email:email};
     setCredentials([...credentials,credential]);
   }
 
   // function to track and set status of boolean variable isDark
-  const toggle = (mode) => {
+  const toggle = (mode:string) => {
     if(mode === 'normal'){
       setStatus(false);
     }
@@ -41,7 +47,7 @@ const Main = () => {
   {/* Listing of credentials in the right side as a list  */}
   <div className='list'  key={Date.now().toString()}>
   <div className='items'>
-  {credentials.map((element) => {
+  {credentials.map((element:any) => {
     return(
       <div key={element.name}>
       <ul data-testid="list">

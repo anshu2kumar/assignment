@@ -1,16 +1,16 @@
-import {render,screen,cleanup,fireEvent, getByTestId} from '@testing-library/react' 
+import {render,screen,cleanup,fireEvent} from '@testing-library/react' 
 import Main from '../Main'
 afterEach(cleanup);
 
 test('should render main component and testing working form',()=>{
   // expect(true).toBe(true);
   render(<Main/>);
-  const element1 = screen.getByLabelText('Name'); 
-  const element2 = screen.getByLabelText('Email'); 
+  const element1 = screen.getByLabelText('Name') as HTMLInputElement; 
+  // const element2 = screen.getByLabelText('Email'); 
   expect(element1).toBeInTheDocument();
-  expect(element2).toBeInTheDocument();
+  // expect(element2).toBeInTheDocument();
   expect(element1.value).toBe("");
-  expect(element2.value).toBe("");
+  // expect(element2.value).toBe("");
   fireEvent.change(element1, { target: { value: "testName" }});
   expect(element1.value).toBe("testName");
 

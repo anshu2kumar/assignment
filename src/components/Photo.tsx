@@ -1,13 +1,21 @@
 import React from 'react'
-import{ useState, useEffect } from "react";
+import{ useState} from "react";
 import Button from '@mui/material/Button';
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 
 const PER_PAGE = 5;
+export interface photoProvider {
+  id:number;
+  thumbnailUrl:string;
+  title:string;
+}
+export interface pageProvider {
+  selected:number;
+}
 
 const Photo = () => {
-  const [photos, setPhotos] = useState([]);
+  const [photos, setPhotos] = useState<photoProvider[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
   const fetchPhotos = async () =>{
     const apiResponse = await axios("https://jsonplaceholder.typicode.com/photos");
@@ -18,7 +26,8 @@ const Photo = () => {
   // useEffect(()=>{
   //   fetchPhotos();
   // },[])
-  function handlePageClick({ selected: selectedPage }) {
+  
+  function handlePageClick({ selected:selectedPage}:pageProvider) {
     setCurrentPage(selectedPage);
   }
 
@@ -26,7 +35,7 @@ const Photo = () => {
 
   const currentPageData = photos
     .slice(offset, offset + PER_PAGE)
-    .map(({ thumbnailUrl }) => <img src={thumbnailUrl} />);
+    .map(({ thumbnailUrl,title }) => <img src={thumbnailUrl} title={title} alt="testImage"/>);
 
   const pageCount = Math.ceil(photos.length / PER_PAGE);
 
@@ -38,7 +47,7 @@ const Photo = () => {
     <div className="App">
    
     {currentPageData}
-    {currentPageData .length > 0 ?
+    {currentPageData.length>0 ?
     <ReactPaginate
     // previousLabel={"← Previous"}
     // nextLabel={"Next →"}
