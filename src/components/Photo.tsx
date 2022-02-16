@@ -20,13 +20,8 @@ const Photo = () => {
   const fetchPhotos = async () =>{
     const apiResponse = await axios("https://jsonplaceholder.typicode.com/photos");
     setPhotos(apiResponse.data);
-    // console.log(apiResponse);
   }
 
-  // useEffect(()=>{
-  //   fetchPhotos();
-  // },[])
-  
   function handlePageClick({ selected:selectedPage}:pageProvider) {
     setCurrentPage(selectedPage);
   }
